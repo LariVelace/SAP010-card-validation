@@ -1,0 +1,5 @@
+- página inicial bloqueada para o usuário colocar as informações 
+- coletar informações do usuário(Ok)
+- codificar os números do cartão mostrando apenas os 4 últimos números e não permitir campo vazio
+- validar número do cartão para ver se está correto
+- mostrar na tela se o número está correto
