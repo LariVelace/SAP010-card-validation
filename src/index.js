@@ -4,7 +4,7 @@ console.log(validator);
 
 function validarCartao() {
     var numeroCartao = document.getElementById("cartao").value;
-    alert(numeroCartao);
+    validator.isValid(numeroCartao);
 }
 
 document.getElementById("verificarCartao").addEventListener("click", function () {
