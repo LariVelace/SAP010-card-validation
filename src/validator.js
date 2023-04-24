@@ -25,7 +25,11 @@ const validator = {
       listaMultiplicada.push(element);
     }
     const soma = this.sum(listaMultiplicada)
-    alert(soma);
+    if (soma % 10 === 0) {
+      return true;
+    }
+    return false;
+    // alert(soma);
   },
   //função que soma os números de uma lista
   sum(array) {
@@ -39,9 +43,26 @@ const validator = {
     //retorna o resultado
     return resultado;
   }
-
+  , getBandeira(numeroCartao) {
+    var primeiroDigito = numeroCartao.slice(0, 1);
+    if (primeiroDigito == 5) {
+      return "Mastercard";
+    }
+    if (primeiroDigito == 4) {
+      return "Visa"
+    }
+    if (primeiroDigito == 3) {
+      return "American Express"
+    }
+  }
 };
 
-
+// function maskify(creditCard) {
+//if (creditCard.length < 6) return creditCard;
+//const last4Characters = creditCard.substr(-4);
+//const firstCharacter = creditCard.substr(0, 1);
+//const maskingCharacters = creditCard.substr(1, creditCard.length - 5).replace(/\d/g, '#');
+//return `${firstCharacter}${maskingCharacters}${last4Characters}`;
+//}
 
 export default validator;
