@@ -3,6 +3,7 @@ html {
     width: 100%;
     font-size: xx-large;
     text-align: center;
+    font-style:inherit;
   }
   
   body {
@@ -12,3 +13,21 @@ background-image: url("images/johnnie-walker.jpg");
   main {
 background-color: lightgray;
   }
+  
+ h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.p2 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.p3 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.button {
+  background-color:rgb(135, 135, 194);
+  font-weight: 900;
+  border-radius: 25px;
+}
