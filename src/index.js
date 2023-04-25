@@ -4,11 +4,15 @@ console.log(validator);
 
 //cria a função de validar o cartão
 function validarCartao() {
-  //cria a constante numero cartão,pega o número do cartão e atribui um valor
+  //cria a constante numero cartão,pega o número do cartão e seu valor
   const numeroCartao = document.getElementById("cartao").value;
+  if (!numeroCartao){
+    alert ("Favor digite o número do cartão");
+    return;
+  }
   //valida o cartão e informa se é válido ou não
   const cartaoValido = validator.isValid(numeroCartao);
-  //informa se o cartão é válido
+  //se o cartão é válido
   if (cartaoValido) {
     //caso o cartão seja válido,ele informa a bandeira através do número do cartão
     var bandeira = validator.getBandeira(numeroCartao)
