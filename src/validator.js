@@ -43,16 +43,17 @@ const validator = {
     //retorna o resultado
     return resultado;
   }
+  //cria uma função para informar a bandeira do cartão
   , getBandeira(numeroCartao) {
+    //divide e pega somente o primeiro número do cartão inserido para poder identificar a bandeira
     var primeiroDigito = numeroCartao.slice(0, 1);
+    //Se o primeiro digito for igual a 5,ele informa que o cartão é master
     if (primeiroDigito == 5) {
       return "Mastercard";
     }
+    //Se o primeiro digito for igual a 4,ele informa que o cartão é visa
     if (primeiroDigito == 4) {
       return "Visa"
-    }
-    if (primeiroDigito == 3) {
-      return "American Express"
     }
   }
 };
