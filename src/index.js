@@ -1,6 +1,6 @@
 import validator from './validator.js';
 
-console.log(validator);
+//console.log(validator);
 
 //cria a função de validar o cartão
 function validarCartao() {
@@ -15,9 +15,13 @@ function validarCartao() {
   //se o cartão é válido
   if (cartaoValido) {
     //caso o cartão seja válido,ele informa a bandeira através do número do cartão
-    var bandeira = validator.getBandeira(numeroCartao)
+    const bandeira = validator.getBandeira(numeroCartao)
     //um alerta que informa se o cartão é valido e acrescenta a informação da bandeira
     alert("Seu cartão é valido,sua bandeira é " + bandeira);
+    const numerosOcultos = document.getElementById("numerosMascarados");
+    const bandeiraHTML = document.getElementById("bandeira");
+    numerosOcultos.innerHTML = validator.maskify(numeroCartao);
+    bandeiraHTML.innerHTML = bandeira;
     return;
   }
   //um alerta para informar se o cartão não é valido

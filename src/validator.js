@@ -46,24 +46,40 @@ const validator = {
   //cria uma função para informar a bandeira do cartão
   , getBandeira(numeroCartao) {
     //divide e pega somente o primeiro número do cartão inserido para poder identificar a bandeira
-    var primeiroDigito = numeroCartao.slice(0, 1);
+    const primeiroDigito = numeroCartao.slice(0, 1);
     //Se o primeiro digito for igual a 5,ele informa que o cartão é master
-    if (primeiroDigito == 5) {
+    if (primeiroDigito === "5") {
       return "Mastercard";
     }
     //Se o primeiro digito for igual a 4,ele informa que o cartão é visa
-    if (primeiroDigito == 4) {
+    if (primeiroDigito === "4") {
       return "Visa"
     }
+  },
+  maskify(numeroCartao){
+    const indexStart = 0;
+    const sliceIndex = numeroCartao.length - 4;
+    const indexEnd = numeroCartao.length;
+
+    const numerosOcultos = numeroCartao.substring(indexStart, sliceIndex);
+    //console.log(numerosOcultos);
+
+    const ultimosNumeros = numeroCartao.substring(sliceIndex, indexEnd);
+    //console.log(ultimosNumeros);
+
+    const numeroMascarado = numerosOcultos.replace(numerosOcultos, mask(numerosOcultos))
+   
+    const ocultos = numeroMascarado + ultimosNumeros;
+    return ocultos
+
   }
 };
 
-// function maskify(creditCard) {
-//if (creditCard.length < 6) return creditCard;
-//const last4Characters = creditCard.substr(-4);
-//const firstCharacter = creditCard.substr(0, 1);
-//const maskingCharacters = creditCard.substr(1, creditCard.length - 5).replace(/\d/g, '#');
-//return `${firstCharacter}${maskingCharacters}${last4Characters}`;
-//}
-
+function mask(numerosOcultos){
+  for(let i = 0; i < numerosOcultos.length; i++){
+    //console.log(numerosOcultos[i]);
+    numerosOcultos = numerosOcultos.replace(numerosOcultos[i], "#");
+  }
+  return numerosOcultos;
+}
 export default validator;
