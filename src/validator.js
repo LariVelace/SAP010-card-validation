@@ -24,7 +24,9 @@ const validator = {
       //adiciona o elemento na lista multiplicada
       listaMultiplicada.push(element);
     }
+    //faz a soma dos números do cartão
     const soma = this.sum(listaMultiplicada)
+    //se o número for multiplo de 10 é válido
     if (soma % 10 === 0) {
       return true;
     }
@@ -56,30 +58,39 @@ const validator = {
       return "Visa"
     }
   },
+  //função para mascarar o número do cartão
   maskify(numeroCartao){
+    //cria uma variável com o valor 0
     const indexStart = 0;
+    //define a quantidade de números do cartão menos 4
     const sliceIndex = numeroCartao.length - 4;
+    //variável com a quantidade de números do cartão
     const indexEnd = numeroCartao.length;
 
+    //pega quais números devem ser ocultados
     const numerosOcultos = numeroCartao.substring(indexStart, sliceIndex);
-    //console.log(numerosOcultos);
-
+    
+    //números que devem aparecer
     const ultimosNumeros = numeroCartao.substring(sliceIndex, indexEnd);
-    //console.log(ultimosNumeros);
-
+    
+     //substitui os números ocultados por #
     const numeroMascarado = numerosOcultos.replace(numerosOcultos, mask(numerosOcultos))
-   
+    
+    //cria um número do cartão mascarado
     const ocultos = numeroMascarado + ultimosNumeros;
+    //retorna ocultos,mostrando apenas os 4 últimos
     return ocultos
 
   }
 };
-
+//função que cria a quantidade de #
 function mask(numerosOcultos){
+  //para cada número para ser ocultado
   for(let i = 0; i < numerosOcultos.length; i++){
-    //console.log(numerosOcultos[i]);
+   //troca o número por #
     numerosOcultos = numerosOcultos.replace(numerosOcultos[i], "#");
   }
+  //retorna os números ocultos
   return numerosOcultos;
 }
 export default validator;
