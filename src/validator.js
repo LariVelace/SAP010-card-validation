@@ -59,7 +59,7 @@ const validator = {
     }
   },
   //função para mascarar o número do cartão
-  maskify(numeroCartao){
+  maskify(numeroCartao) {
     //cria uma variável com o valor 0
     const indexStart = 0;
     //define a quantidade de números do cartão menos 4
@@ -69,13 +69,12 @@ const validator = {
 
     //pega quais números devem ser ocultados
     const numerosOcultos = numeroCartao.substring(indexStart, sliceIndex);
-    
+
     //números que devem aparecer
     const ultimosNumeros = numeroCartao.substring(sliceIndex, indexEnd);
-    
-     //substitui os números ocultados por #
+
     const numeroMascarado = numerosOcultos.replace(numerosOcultos, mask(numerosOcultos))
-    
+
     //cria um número do cartão mascarado
     const ocultos = numeroMascarado + ultimosNumeros;
     //retorna ocultos,mostrando apenas os 4 últimos
@@ -84,10 +83,9 @@ const validator = {
   }
 };
 //função que cria a quantidade de #
-function mask(numerosOcultos){
+function mask(numerosOcultos) {
   //para cada número para ser ocultado
-  for(let i = 0; i < numerosOcultos.length; i++){
-   //troca o número por #
+  for (let i = 0; i < numerosOcultos.length; i++) {
     numerosOcultos = numerosOcultos.replace(numerosOcultos[i], "#");
   }
   //retorna os números ocultos
