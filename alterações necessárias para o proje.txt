@@ -1,0 +1,4 @@
+alterações necessárias para o projeto 1:
+deixar o fundo responsível para celular e computador
+em volta de onde o usuário digita o número do cartão,colocar um modelo de cartão que se
+preencha conforme o usuário for digitando o número.

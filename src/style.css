@@ -7,11 +7,15 @@ html {
   }
   
   body {
-background-image: url("images/johnnie-walker.jpg");
+background-image: url("black.jpg");
+background-position: all;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
   main {
 background-color: lightgray;
+margin: 300px;
   }
   
  h1 {
@@ -22,12 +26,12 @@ background-color: lightgray;
   font-family: 'Courier New', Courier, monospace;
 }
 
-.p3 {
-  font-family: 'Courier New', Courier, monospace;
-}
-
 .button {
   background-color:rgb(135, 135, 194);
   font-weight: 900;
   border-radius: 25px;
+}
+
+.visa-master{
+  display: none;
 }
