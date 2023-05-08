@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Virtual Jhonny Walker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -9,6 +10,10 @@
 
     <header></header>
     <main><h1>3. Payment Method</h1>
+      <div id="simularCartao">
+        <p>Seu Nome</p>
+        <p id="numerosMascarados"></p> <span id="bandeira"></span>
+      </div>
       <p class="p2">Add new credit card,we acept:
         <div class="column">
           <img src="master.jpg" alt="Snow" style="width:50px">
@@ -18,12 +23,8 @@
         </div>
       <input type="text" maxlength="16" id="cartao">
       <p><input class="button" type="button" id="verificarCartao" value="verificar cartão"></p>
-    <p id="numerosMascarados"></p> <span id="bandeira"></span>
     </main>
     <footer></footer>
     <script src="index.js" type="module"></script>
   </body>
 </html>
-
-
-style="width:20;height:40px;"
